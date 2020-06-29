@@ -1,0 +1,105 @@
+1) Create new environment "srini_env"
+
+	conda create -n srini_env python=3.8
+
+2) Activate new environment "srini_env"
+
+	conda activate srini_env
+
+* Check python version
+	
+	python --version
+
+* Check installed packages
+
+	pip freeze
+
+3) Install django
+
+	pip install django
+
+4) change directory from C:\Users\Admin to F drive
+
+	F:
+
+5) Create new project folder "mysite"
+
+	django-admin startproject mysite
+
+6) Change directory to "mysite"
+
+	cd mysite
+
+7) Create new application "polls" for the project "mysite"
+
+	django-admin startapp polls
+
+8) Check if there was any changes in the application models (Check for changes)
+	python manage.py makemigrations
+
+9) Create default/changed tables in the database for all the available applications (Commit changes, if any)
+
+	python manage.py migrate
+
+10) Whitelist any IP access: Change Allowed Host to *inside settings.py
+
+	ALLOWED_HOSTS = ['*']
+
+11) Navigate to the created application "polls" and check the app name in apps.py. Paste the app name in settings.py under Installed Apps. Add comma (,) at the end of previous line.
+
+	INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'polls',
+
+	]
+
+12) Create superuser
+
+	python manage.py createsuperuser
+
+***	(srini_env) F:\mysite>python manage.py createsuperuser
+	Username (leave blank to use 'admin'): srini_user
+	Email address: abc@gmail.com
+	Password: password (will not be visible in the command prompt)
+	Password (again):
+	This password is too common.
+	Bypass password validation and create user anyway? [y/N]: y
+	Superuser created successfully.
+
+13) Start django server
+
+	python manage.py runserver 8000 (8000 is port number, default port number is also 8000. If port number is not mentioned, it will create as 8000)
+
+14) Install crispy_forms to create form in html page
+
+	pip install django-crispy-forms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

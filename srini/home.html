@@ -1,0 +1,11 @@
+{% load crispy_forms_tags %}
+
+<h1>Hi!</h1>
+{{ dev_name }}<br>
+{{ address }}<br>
+<form class = "homepage" method = "post">
+    {% csrf_token %}
+
+{{ display_form|crispy }}
+    <button type="submit">submit</button>
+</form>
